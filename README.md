@@ -62,7 +62,7 @@ minikube tunnel
 Call the nginx website
 
 ```shell
-xdg-open http://$(kubectl get service ducksel-deployment -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+xdg-open http://$(kubectl get service ducksel -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 ```
 
 ## Info
