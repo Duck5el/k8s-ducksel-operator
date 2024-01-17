@@ -1,0 +1,9 @@
+apiVersion: api.my.domain/v1
+kind: Ducksel
+metadata:
+  name: ducksel
+  namespace: ducksel
+spec:
+  replicas: 1
+  service:
+    enabled: true

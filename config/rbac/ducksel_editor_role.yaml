@@ -1,0 +1,31 @@
+# permissions for end users to edit ducksels.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: ducksel-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: crd-ducksel
+    app.kubernetes.io/part-of: crd-ducksel
+    app.kubernetes.io/managed-by: kustomize
+  name: ducksel-editor-role
+rules:
+- apiGroups:
+  - api.my.domain
+  resources:
+  - ducksels
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - api.my.domain
+  resources:
+  - ducksels/status
+  verbs:
+  - get
